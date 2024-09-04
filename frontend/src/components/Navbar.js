@@ -11,10 +11,11 @@ function Navbar() {
       {/* </Link> */}
       <h1>Film Fusion</h1>
       {/* <div className="navbar-links">
-        <Link to="/">Home</Link>
+        <Link to="/">Home</Link>/
         <Link to="/login">Login</Link>
         <Link to="/signup">Sign Up</Link>
       </div> */}
+      
     </nav>
   );
 }
