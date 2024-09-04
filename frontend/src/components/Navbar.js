@@ -1,21 +1,23 @@
 import React from "react";
-import logo2 from "../assets/logo2.png";
+import logo3 from "../assets/logo3.png";
 // import {Link} from 'react-router-dom';
-import '../styles/Navbar.css';
+import "../styles/Navbar.css";
 
 function Navbar() {
   return (
     <nav className="navbar">
-      {/* <Link to="/" className="navbar-logo"> */}
-        <img src={logo2} alt="Film Fusion Logo" />
-      {/* </Link> */}
-      <h1>Film Fusion</h1>
-      {/* <div className="navbar-links">
-        <Link to="/">Home</Link>/
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Sign Up</Link>
-      </div> */}
-      
+      <div className="logo-container">
+        <img className="navbar-logo" src={logo3} alt="Film Fusion Logo" />
+      </div>
+      <div className="text-container">
+        <a href="/" className="site-name">Film Fusion</a>
+      </div>
+      <div className='nav-links'>
+      <ul className='nav-list'>  
+        <li><a href='/signup'>Sign Up</a></li>
+        <li><a href='/login'>Login</a></li>
+      </ul>
+      </div>
     </nav>
   );
 }

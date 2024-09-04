@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Searchbar from '/Searchbar.js';
+import Searchbar from '../components/Searchbar.js'
 
 function SearchPage() {
   const [results, setResults] = useState([]);
