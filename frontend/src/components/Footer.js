@@ -1,12 +1,15 @@
 import React from 'react'
+import '../styles/Footer.css'
 
 function Footer() {
   return (
-    <div>
-      <h3>  About us</h3>    
-     
-    </div>
+  <footer className='footer'>
+      <p>About us</p>  
+      <p>Privacy Policy</p>  
+      <p>Terms and conditions</p>  
+      <p>&copy; 2024 FilmFusion. All rights reserved.</p>
+    </footer>
   )
 }
 
-export default Footer
+export default Footer;
