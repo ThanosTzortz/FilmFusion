@@ -8,6 +8,7 @@ import axios from "axios";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import LoginPage from "./pages/Loginpage";
 import SignupPage from "./pages/Signuppage";
+import Homepage from "./pages/Homepage";
 
 
 const API_KEY = '75965813';
@@ -60,9 +61,10 @@ function App() {
         {/* <Route path = "/" element={<></>} /> */}
         <Route path = "/login" element={<LoginPage/>} />
         <Route path = "/signup" element={<SignupPage/>} />
+        <Route path = "/homepage" element={<Homepage/>} />
         </Routes>
       
-      <Searchbar onSearch={handleSearch} />
+      {/* <Searchbar onSearch={handleSearch} /> */}
       <MovieCarousel movies={isSearchActive ? searchResults : defaultMovies} />
       <Footer />
     </div>

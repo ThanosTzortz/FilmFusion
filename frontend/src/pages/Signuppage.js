@@ -11,7 +11,7 @@ function SignupPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/signup", { email, password });
+      await axios.post("http://localhost:3004/user/create", { email, username, password, address });
       // successful signup
       window.location.href = "/login";
     } catch (error) {

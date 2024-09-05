@@ -18,7 +18,7 @@ function LoginPage() {
       localStorage.setItem('token', token);
       
       // Redirect to the homepage or dashboard after successful login  
-      window.location.href = "/"; 
+      window.location.href = "/homepage"; 
     } catch (error) {
       console.error("Error logging in:", error);
     }
