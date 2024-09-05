@@ -1,0 +1,35 @@
+.auth-container {
+  background-color: blueviolet;
+  height: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem;
+  margin: 2rem;
+}
+
+.form-styling {
+  background-color: greenyellow;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 1em;
+  border-radius: 18px;
+  border: 2px solid black;
+  border-style: outset;
+  align-items: center;
+  justify-content: center;
+  width: 30rem;
+}
+
+.input-styling {
+  background-color: chocolate;
+  border-radius: 18px;
+  border:1px solid #ccc;
+}
+
+.signup-btn {
+  border-radius: 18px;
+  width: 50%;
+}

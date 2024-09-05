@@ -1,45 +1,76 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-
+import React, { useState } from "react";
+import axios from "axios";
+import "../styles/Signuppage.css";
 
 function SignupPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [address, setAddress] = useState(''); //address
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
+  const [username, setUsername] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Replace with your actual signup endpoint
-      await axios.post('/signup', { email, password });
-      // Handle successful signup (e.g., redirect to login)
-      window.location.href = '/login'; // Redirect to login page
+      await axios.post("/signup", { email, password });
+      // successful signup
+      window.location.href = "/login";
     } catch (error) {
-      console.error('Error signing up:', error);
+      console.error("Error signing up:", error);
     }
   };
 
   return (
     <div className="auth-container">
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Email:
+      <h2>Sign up here:</h2>
+      <p>Please enter your email and password:</p>
+      <form onSubmit={handleSubmit} className="form-styling">
+        <label>
+          Email:
           <input
+            className="input-styling"
+               placeholder='Please enter your email'
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </label>
-        <label>Password:
+        <label>
+          Password:
           <input
+            className="input-styling"
+            placeholder="Please enter your Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </label>
-        <button type="submit">Signup</button>
+        <label>
+          Username:
+          <input
+            className="input-styling"
+            placeholder="Please enter your Username"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Address:
+          <input
+            className="input-styling"
+               placeholder='Please enter your Address'
+            type="text"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            required
+          />
+        </label>
+        <button className="signup-btn" type="submit">
+          Signup
+        </button>
       </form>
     </div>
   );
