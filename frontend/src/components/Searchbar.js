@@ -25,7 +25,7 @@ function Searchbar({ onSearch }) {
           type="text"
           value={query}
           onChange={handleChange}
-          placeholder="Search for a movie..."
+          placeholder="Search for movies or series..."
           className='input-field'
         />
         <button className='search-btn' type="submit">Search</button>

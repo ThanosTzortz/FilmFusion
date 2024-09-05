@@ -1,6 +1,7 @@
 .navbar {
-  background-color: red;
+  background-color: rgb(26, 21, 21);
   height: 100%;
+  font-size: 20px;
 }
 
 .navbar-logo {
@@ -11,10 +12,11 @@
 
 .site-name {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: bolder;
+  font-weight:900;
   font-style: none;
-  color:white;
+  color:#cf3f3f;
 }
+
 
 .text-container {
   margin: 3em;
@@ -36,6 +38,6 @@ nav a{
 
 
 .nav-list a:hover{
-  color:#000000;
+  color:#cf3f3f;
   text-decoration:none;
 } 

@@ -10,7 +10,7 @@ function Navbar() {
         <img className="navbar-logo" src={logo3} alt="Film Fusion Logo" />
       </div>
       <div className="text-container">
-        <Link to="/">Film Fusion</Link>
+        <Link className='site-name' to="/">Film Fusion</Link>
       </div>
       <div className="nav-links">
         <ul className="nav-list">

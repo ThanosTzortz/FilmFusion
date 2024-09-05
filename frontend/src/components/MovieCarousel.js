@@ -3,7 +3,7 @@ import '../styles/MovieCarousel.css';
 
 function MovieCarousel({ movies }) {
   if (!movies || movies.length === 0) {
-    return <div>No Movies Found</div>;
+    return <div>No Movies matched the criteria</div>;
   }
 
   return (
@@ -15,7 +15,8 @@ function MovieCarousel({ movies }) {
             alt={movie.Title}
             className="movie-poster"
           />
-          <h3 className="movie-title">{movie.Title}</h3>
+          <h3 className="movie-title">{movie.Title} ({movie.Year}) </h3>
+          <div className="movie-plot">{movie.Plot}</div>
         </div>
       ))}
     </div>
