@@ -9,12 +9,18 @@
   .movie-box {
     border: 1px solid #ddd;
     border-radius: 8px;
+    color:white;
     overflow: hidden;
-    width: 200px; /* Adjust width as needed */
+    width: 200px; 
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  
+
+.movie-box:hover {
+  transform: scale(1.1);
+  }
+
+
   .movie-poster {
     width: 100%;
     height: auto;

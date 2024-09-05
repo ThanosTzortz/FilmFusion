@@ -19,6 +19,7 @@ function SearchPage() {
       const data = await response.json();
       if (data.Response === "True") {
         setResults(data.Search); 
+
       } else {
         setResults([]);
         setError(data.Error); 
@@ -39,12 +40,13 @@ function SearchPage() {
       <ul>
         {results.map((movie) => (
           <li key={movie.imdbID}>
-            <h2>{movie.Title} ({movie.Year})</h2>
+            <h2>{movie.Title} ({movie.Year}) </h2>
             <img src={movie.Poster} alt={movie.Title} />
-            <p>{movie.Type}</p>
+           
           </li>
         ))}
       </ul>
+      {/* <p>{movie.Plot}</p> */}
     </div>
   );
 }

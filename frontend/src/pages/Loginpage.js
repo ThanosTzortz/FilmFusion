@@ -8,14 +8,21 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Replace with your actual login endpoint
-      await axios.post("/login", { email, password });
-      // Handle successful login (e.g., redirect to home page)
-      window.location.href = "/"; // Redirect to homepage or dashboard
+      // Send login request to the backend
+      const response = await axios.post("http://localhost:3004/user/login", { email, password });
+
+      // Get the token from the response data
+      const token = response.data.token;
+
+      // Store the token in localStorage
+      localStorage.setItem('token', token);
+      
+      // Redirect to the homepage or dashboard after successful login  
+      window.location.href = "/"; 
     } catch (error) {
       console.error("Error logging in:", error);
     }
-  };
+  };   
 
   return (
     <div className="auth-container">
@@ -44,7 +51,7 @@ function LoginPage() {
             required
           />
         </label>
-        <button type="submit">Login</button>
+        <button className="signup-btn" type="submit">Login</button>
       </form>
     </div>
   );

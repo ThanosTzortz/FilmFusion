@@ -1,16 +1,20 @@
 .auth-container {
-  background-color: blueviolet;
+  background-image: url('../assets/logo5.png');
   height: min-content;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 4rem;
+  color:whitesmoke;
   margin: 2rem;
+
 }
 
 .form-styling {
-  background-color: greenyellow;
+
+  background-repeat: no-repeat;
+  background-size:cover;
   display: flex;
   flex-direction: column;
   padding: 3rem;
@@ -24,12 +28,17 @@
 }
 
 .input-styling {
-  background-color: chocolate;
+  background-color: transparent;
   border-radius: 18px;
-  border:1px solid #ccc;
+  border:2px solid #ccc;
+  color:#cf3f3f;
+  font-weight: 400;
 }
 
 .signup-btn {
   border-radius: 18px;
-  width: 50%;
+  width: 25%;
+  background-color:#cf3f3f;
+  color:white;
+  border:1px solid #ccc;
 }
