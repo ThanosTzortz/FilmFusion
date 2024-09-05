@@ -33,10 +33,10 @@ function SearchPage() {
 
   return (
     <div>
-      <h1>Search Movies</h1>
+      {/* <h1>Search Movies</h1>
       <Searchbar onSearch={handleSearch} />
       {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
+      {error && <p>Error: {error}</p>} */}
       <ul>
         {results.map((movie) => (
           <li key={movie.imdbID}>
