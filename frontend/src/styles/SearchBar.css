@@ -1,0 +1,27 @@
+.searchbar-div{
+    background-color: aqua;
+    padding:2rem;
+    margin: 2rem;
+    display:flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+}
+
+.input-field{
+    border-radius: 18px;
+    padding:0.2em;
+    width: 20em;
+    border: 2px solid #ccc;
+    border-style: inset;
+    margin:2rem;
+}
+
+.search-btn{
+    border-radius: 18px;
+    padding:0.2em;
+    width: 5em;
+    border: 2px solid #ccc;
+    border-style: outset;
+}

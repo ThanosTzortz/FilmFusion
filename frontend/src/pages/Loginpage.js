@@ -2,26 +2,25 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 
-function SignupPage() {
+function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [address, setAddress] = useState(''); //address
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Replace with your actual signup endpoint
-      await axios.post('/signup', { email, password });
-      // Handle successful signup (e.g., redirect to login)
-      window.location.href = '/login'; // Redirect to login page
+      // Replace with your actual login endpoint
+      await axios.post('/login', { email, password });
+      // Handle successful login (e.g., redirect to home page)
+      window.location.href = '/'; // Redirect to homepage or dashboard
     } catch (error) {
-      console.error('Error signing up:', error);
+      console.error('Error logging in:', error);
     }
   };
 
   return (
     <div className="auth-container">
-      <h2>Signup</h2>
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <label>Email:
           <input
@@ -39,10 +38,10 @@ function SignupPage() {
             required
           />
         </label>
-        <button type="submit">Signup</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );
 }
 
-export default SignupPage;
+export default LoginPage;
