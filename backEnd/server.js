@@ -9,11 +9,11 @@ const port = 3004;
 const connection = require('./connection.js');
 
 
-// app.use(cors({
-//   origin: 'http://localhost:3004',
-//   methods: 'GET,POST,PUT,DELETE',
-//   allowedHeaders: 'Content-Type,Authorization'
-// }));
+app.use(cors({
+  origin: 'http://localhost:3002',
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization'
+}));
 
 app.use(express.json());
 
