@@ -8,9 +8,12 @@ const port = 3004;
 
 const connection = require('./connection.js');
 
+connection(); // Call the function to connect to the database
+
+
 
 app.use(cors({
-  origin: 'http://localhost:3002',
+  origin: 'http://localhost:3000',
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type,Authorization'
 }));
