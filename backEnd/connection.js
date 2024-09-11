@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 
-const URI =  "mongodb+srv://maddshatn:Ox94vN2Vrvu011gp@cluster0.ldcgl3b.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-
-
-main()
-  .then(() => console.log("DB connected successfully"))
-  .catch((err) => console.log(err));
+const URI = "mongodb+srv://heliasfotiadis:Sha1234@mongo.daopabj.mongodb.net/?retryWrites=true&w=majority&appName=mongo";
 
 async function main() {
-  await mongoose.connect(URI);
+  try {
+    await mongoose.connect(URI);
+    console.log("DB connected successfully");
+  } catch (err) {
+    console.error("DB connection error:", err);
+  }
 }
 
-module.exports = main();
+module.exports = main;
