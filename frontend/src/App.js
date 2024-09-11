@@ -10,7 +10,6 @@ import LoginPage from "./pages/Loginpage";
 import SignupPage from "./pages/Signuppage";
 import Homepage from "./pages/Homepage";
 
-
 const API_KEY = '75965813';
 
 function App() {
