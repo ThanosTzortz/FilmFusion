@@ -4,7 +4,7 @@
 }
 
 .App {
-  background-image: url('./assets/logo2.png');
+  background-color: rgb(53, 59, 59);
   background-repeat: no-repeat;
   background-size:cover;
   text-align: center;

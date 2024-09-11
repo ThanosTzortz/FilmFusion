@@ -5,27 +5,27 @@ import Footer from "./components/Footer";
 import Searchbar from "./components/Searchbar";
 import MovieCarousel from "./components/MovieCarousel";
 import axios from "axios";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/Loginpage";
 import SignupPage from "./pages/Signuppage";
 import Homepage from "./pages/Homepage";
-
 
 const API_KEY = '75965813';
 
 function App() {
   const [defaultMovies, setDefaultMovies] = useState([]);
-  const [searchResults, setSearchResults] = useState([]);  
-  const [isSearchActive, setIsSearchActive] = useState(false); 
+  const [searchResults, setSearchResults] = useState([]);
+  const [isSearchActive, setIsSearchActive] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // New state for login
 
-  // Fetch default movies 
+  // Fetch default movies
   useEffect(() => {
     const fetchDefaultMovies = async () => {
       try {
         const response = await axios.get(`http://www.omdbapi.com/?s=horror&apikey=${API_KEY}`);
         const data = response.data;
         if (data.Search) {
-          setDefaultMovies(data.Search.slice(0, 10));  
+          setDefaultMovies(data.Search.slice(0, 10));
         } else {
           setDefaultMovies([]);
         }
@@ -53,21 +53,27 @@ function App() {
     }
   };
 
+  // Function to handle login (for demonstration purposes)
+  const handleLogin = () => {
+    // Simulate login
+    setIsLoggedIn(true);
+  };
+
   return (
     <BrowserRouter>
-    <div className="App">
-      <Navbar />
-      <Routes>
-        {/* <Route path = "/" element={<></>} /> */}
-        <Route path = "/login" element={<LoginPage/>} />
-        <Route path = "/signup" element={<SignupPage/>} />
-        <Route path = "/homepage" element={<Homepage/>} />
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/homepage" element={<Homepage />} />
         </Routes>
-      
-      {/* <Searchbar onSearch={handleSearch} /> */}
-      <MovieCarousel movies={isSearchActive ? searchResults : defaultMovies} />
-      <Footer />
-    </div>
+
+        {isLoggedIn && <Searchbar onSearch={handleSearch} />} {/* Render Searchbar only if logged in */}
+
+        <MovieCarousel movies={isSearchActive ? searchResults : defaultMovies} />
+        <Footer />
+      </div>
     </BrowserRouter>
   );
 }
