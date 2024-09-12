@@ -9,6 +9,11 @@
   padding: 0 2em; /* Adjust horizontal padding to control navbar content position */
 }
 
+.welcome-message {
+  color: white; /* Set text color to white */
+  font-size: 1.2em; /* Adjust font size as needed */
+}
+
 .navbar-logo {
   height: 5rem; /* Adjust height if needed */
   width: 5rem; /* Adjust width if needed */

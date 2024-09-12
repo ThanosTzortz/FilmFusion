@@ -16,9 +16,9 @@ function App() {
   const [defaultMovies, setDefaultMovies] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchActive, setIsSearchActive] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // New state for login
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState(""); // State for username
 
-  // Fetch default movies
   useEffect(() => {
     const fetchDefaultMovies = async () => {
       try {
@@ -37,7 +37,6 @@ function App() {
     fetchDefaultMovies();
   }, []);
 
-  // Handle search functionality
   const handleSearch = async (query) => {
     setIsSearchActive(true);
     try {
@@ -53,24 +52,27 @@ function App() {
     }
   };
 
-  // Function to handle login (for demonstration purposes)
-  const handleLogin = () => {
-    // Simulate login
+  const handleLogin = (username) => {
+    setUsername(username); // Set the username
     setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setUsername(""); // Clear the username
+    setIsLoggedIn(false);
   };
 
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar />
+        <Navbar isLoggedIn={isLoggedIn} username={username} onLogout={handleLogout} />
         <Routes>
           <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/homepage" element={<Homepage />} />
         </Routes>
 
-        {isLoggedIn && <Searchbar onSearch={handleSearch} />} {/* Render Searchbar only if logged in */}
-
+        {isLoggedIn && <Searchbar onSearch={handleSearch} />}
         <MovieCarousel movies={isSearchActive ? searchResults : defaultMovies} />
         <Footer />
       </div>
